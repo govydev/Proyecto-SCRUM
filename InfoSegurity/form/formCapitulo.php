@@ -69,12 +69,13 @@ class formCapitulo{
                                     <div class="header-search">
                                         <form>
                                             <select class="input-select">
-                                                <option value="0">Capitulo 1</option>
-                                                <option value="1">Capitulo 2</option>
-                                                <option value="1">Capitulo 3</option>
-                                                <option value="0">Capitulo 4</option>
-                                                <option value="1">Capitulo 5</option>
-                                                <option value="1">Capitulo 6</option>
+                                                <option value="1">Capitulo 1</option>
+                                                <option value="2">Capitulo 2</option>
+                                                <option value="3">Capitulo 3</option>
+                                                <option value="4">Capitulo 4</option>
+                                                <option value="5">Capitulo 5</option>
+                                                <option value="6">Capitulo 6</option>
+                                                <option value="7">Capitulo 7</option>
                                             </select>
                                             <input class="input" placeholder="Search here">
                                             <button class="search-btn">Buscar</button>
@@ -91,6 +92,7 @@ class formCapitulo{
                                 <div class="newsletter">
                                     <?for($i=0; $i<1; $i++){?>
                                     <p class="text-muted">Capitulo <strong><?=$list[$i][4]?></strong></p><?}?>
+                                    <a href="../index.php" class="btn btn-success">Menu principal</a>
                                 </div>
                             </div>
                         </div>
