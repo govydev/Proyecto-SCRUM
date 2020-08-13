@@ -104,11 +104,11 @@ class formCapitulo{
                     <div class="container">
                         <!-- row -->
                         <div class="row">
-                            <?foreach ($variable as $key => $value) {?>
+                            <?foreach ($list as $key => $value) {?>
                                 <div class="col-md-4 col-xs-6">
                                     <div class="shop">
                                         <div class="shop-img">
-                                            <img src="./img/portada<?=$value[4]?>.png">
+                                            <img src="../img/portada<?=$value[4]?>.png">
                                         </div>
                                         <div class="shop-body">
                                             <h3>Capitulo <br><?=$value[4]?></h3>
