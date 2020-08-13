@@ -3,14 +3,10 @@ include_once("conexion.php");
 
 class articulo{
 
-    public function listaArticulo(){
-        conexion::getConexion();
-		$consulta = "SELECT * FROM articulo";
-		$resultado = mysql_query($consulta);
-		$num_registros = mysql_num_rows($resultado);
-		for($i = 0; $i < $num_registros; $i++)
-			$fila[$i] = mysql_fetch_array($resultado);
-		return $fila;
+    public function listaArticuloCapitulo($i){
+		$consulta = "SELECT * FROM articulo WHERE idcapitulo = $i";
+		$resultado = conexion::getConexion() -> query($consulta);
+		return $resultado->fetch_all();
     }
 
 }
