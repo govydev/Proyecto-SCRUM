@@ -200,6 +200,17 @@
 										</div>
 									</div>
 								</div>
+								<div class="col-md-4 col-xs-6">
+									<div class="shop">
+										<div class="shop-img">
+											<img src="./img/portada2.png" alt="">
+										</div>
+										<div class="shop-body">
+											<h3>Capitulo<br>7</h3>
+											<a href="capitulo7.php" class="cta-btn">Ir<i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
 		</div>
 
 	</body>
