@@ -55,7 +55,7 @@ class formArticulo{
                                 <div class="col-md-1">
                                     <div class="header-logo">
                                         
-                                        <a href="#" class="logo">
+                                        <a href="../index.php" class="logo">
                                     
                                             <img src="../img/logo.png" alt="">
                                         </a>
@@ -77,7 +77,6 @@ class formArticulo{
                                     <p class="text-muted">Capitulo <strong><?=$value[4]?></strong>  - Articulo <strong><?=$value[1]?></strong></p>
                                     <p class="text-muted"><strong><?=$value[2]?></strong></p><?}?>
                                     <div class="header-search">
-                                            <a href="../index.php" class="btn btn-success">Menu principal</a>
                                             <?for($i=0; $i<1; $i++){?>
                                                 <a href="capitulo.php?id=<?=$list[$i][4]?>" class="btn btn-success">Regresar a ver el Capitulo</a>
                                             <?}?>

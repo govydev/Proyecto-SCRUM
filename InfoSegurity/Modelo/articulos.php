@@ -13,7 +13,13 @@ class articulos{
 		$consulta = "SELECT * FROM articulo WHERE idarticulo = $i";
 		$resultado = conexion::getConexion() -> query($consulta);
 		return $resultado->fetch_all();
-    }
+	}
+	
+	public function listaArticulosBusqueda($buscar){
+		$consulta = "SELECT * FROM articulo WHERE nombre_articulo like '%$buscar%'";
+		$resultado = conexion::getConexion() -> query($consulta);
+		return $resultado->fetch_all();
+	}
 
 }
 

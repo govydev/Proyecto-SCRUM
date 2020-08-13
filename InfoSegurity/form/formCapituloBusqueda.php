@@ -1,9 +1,9 @@
 <?php
 
-class formIndex{
+class formCapituloBusqueda{
 
-    public function formIndexShow($list){?>
-<!DOCTYPE html>
+    public function formCapituloBusquedaShow($list){?>
+ <!DOCTYPE html>
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
@@ -16,20 +16,20 @@ class formIndex{
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
 		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
 
 		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
-		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/slick-theme.css"/>
 
 		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/nouislider.min.css"/>
 
 		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
 
 		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/style.css"/>
 
     </head>
 	<body>
@@ -48,9 +48,9 @@ class formIndex{
 						<div class="col-md-3">
 							<div class="header-logo">
 								
-								<a href="./index.php" class="logo">
+								<a href="../index.php" class="logo">
 							
-									<img src="./img/logo.png" alt="">
+									<img src="../img/logo.png" alt="">
 								</a>
 							</div>
 							
@@ -60,10 +60,10 @@ class formIndex{
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form action="./form/getBusqueda.php" method="post">
-									<select class="input-select" name="ddTipo">
-                                            <option value="Capitulo">Capitulo</option>
-											<option value="Articulo">Articulo</option>
+								<form action="../form/getBusqueda.php" method="post">
+									<select class="input-select" name='ddTipo'>
+									<option value="Capitulo">Capitulo</option>
+									<option value="Articulo">Articulo</option>
 									</select>
 									<input class="input" placeholder="Search here" name="txtbusqueda">
 									<button class="search-btn">Buscar</button>
@@ -92,11 +92,11 @@ class formIndex{
 					<div class="col-md-4 col-xs-6">
                             <div class="shop">
                                 <div class="shop-img">
-                                    <img src="	./img/portada<?=$value[1]?>.png" alt="<?=$value[2]?>">
+                                    <img src="../img/portada<?=$value[1]?>.png" alt="<?=$value[2]?>">
                                 </div>
                                 <div class="shop-body">
                                     <h3>Capitulo <br><?=$value[1]?></h3>
-                                    <a href="form/capitulo.php?id=<?=$value[1]?>" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
+                                    <a href="../form/capitulo.php?id=<?=$value[1]?>" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
                                     <a class="cta-btn"><?=$value[2]?></a>
                                 </div>
 						    </div>
