@@ -31,13 +31,6 @@ class formIndex{
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
     </head>
 	<body>
 		<!-- HEADER -->
@@ -98,18 +91,16 @@ class formIndex{
 				<div class="row">
 					<!-- shop --> <?foreach ($list as $value) {?>
 					<div class="col-md-4 col-xs-6">
-                       
                             <div class="shop">
                                 <div class="shop-img">
                                     <img src="./img/portada<?=$value[1]?>.png" alt="<?=$value[2]?>">
                                 </div>
                                 <div class="shop-body">
                                     <h3>Capitulo <br><?=$value[1]?></h3>
-                                    <a href="capitulo1.php" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
+                                    <a href="form/capitulo.php?id=<?=$value[1]?>" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
                                     <a class="cta-btn"><?=$value[2]?></a>
                                 </div>
 						    </div>
-                        
                     </div>
                     <?}?>
                     </div>
