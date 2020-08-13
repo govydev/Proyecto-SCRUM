@@ -5,7 +5,7 @@ class conexion{
 	private function conexion()
 	{
 		if(!isset($this->conexion)){
-			self::$conexion= new mysqli("localhost","root","12345678", "scrum") or die(mysql_error());
+			self::$conexion= new mysqli("localhost","root","", "scrum") or die(mysql_error());
 		}
 		self::$conexion->set_charset('utf8');
 	}

@@ -60,7 +60,7 @@ class formIndex{
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
+								<form action="" method="post">
 									<select class="input-select">
                                         <?foreach ($list as $value) {?>
                                             <option value="<?=$value[1]?>">Capitulo <?=$value[1]?></option>
