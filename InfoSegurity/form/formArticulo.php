@@ -1,8 +1,8 @@
 <?php
 
-class formCapitulo{
+class formArticulo{
 
-    public function formCapituloShow($list, $cap){?>
+    public function formArticuloShow($list){?>
         <!DOCTYPE html>
         <html lang="en">
             <head>
@@ -90,24 +90,23 @@ class formCapitulo{
                     <div class="container">
                         <!-- row -->
                         <div class="row">
-                            <?foreach ($list as $value) {?>
-                                <div class="col-md-4 col-xs-6">
-                                    <div class="shop">
-                                        <div class="shop-img">
-                                            <img src="../img/portada<?=$value[4]?>.png">
-                                        </div>
-                                        <div class="shop-body">
-                                            <h3>Capitulo <br><?=$value[4]?></h3>
-                                            <a href="articulo.php?articulo=<?=$value[0]?>" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
-                                            <a class="cta-btn"><?=$value[2]?></a>
-                                        </div>
+                            <div class="col-md-4 col-xs-6">
+                                <div class="shop">
+                                    <div class="shop-img">
+                                        <img src="../img/portada<?=$value[4]?>.png">
+                                    </div>
+                                    <div class="shop-body">
+                                        <h3>Capitulo <br><?=$value[4]?></h3>
+                                        <a href="capitulo.php?capitulo=<?=$cap?>" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
+                                        <a class="cta-btn"><?=$value[2]?></a>
                                     </div>
                                 </div>
-                            <?}?>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
-        
+                <label for=""><?=$value[0][4]?></label>
             </body>
         </html>
         

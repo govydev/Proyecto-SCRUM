@@ -35,9 +35,6 @@ class formIndex{
 	<body>
 		<!-- HEADER -->
 		<header>
-			<!-- TOP HEADER -->
-			<!-- /TOP HEADER -->
-
 			<!-- MAIN HEADER -->
 			<div id="header">
 				<!-- container -->
@@ -60,14 +57,14 @@ class formIndex{
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
-									<select class="input-select">
-                                        <?foreach ($list as $value) {?>
-                                            <option value="<?=$value[1]?>">Capitulo <?=$value[1]?></option>
-                                        <?}?>
+								<form action="index.php" method="POST">
+									<select class="input-select" name="txtOpcion">
+										<option value="capitulo">Capitulo</option>
+                                        <option value="contenido">Contenido</option>
+										<option value="articulo">Articulo</option>
 									</select>
-									<input class="input" placeholder="Search here">
-									<button class="search-btn">Buscar</button>
+									<input class="input" placeholder="Busqueda" name="txtBusqueda">
+									<button class="search-btn" type="submit">Buscar</button>
 								</form>
 							</div>
 						</div>
@@ -76,7 +73,6 @@ class formIndex{
 								<div class="menu-toggle">
 									<a href="#">
 										<i class="fa fa-bars"></i>
-										<span>Menu</span>
 									</a>
 								</div>
 							</div>
@@ -92,14 +88,16 @@ class formIndex{
 					<!-- shop --> <?foreach ($list as $value) {?>
 					<div class="col-md-4 col-xs-6">
                             <div class="shop">
-                                <div class="shop-img">
+                                <a href="form/capitulo.php?capitulo=<?=$value[1]?>" class="cta-btn">
+								<div class="shop-img">
                                     <img src="./img/portada<?=$value[1]?>.png" alt="<?=$value[2]?>">
                                 </div>
                                 <div class="shop-body">
                                     <h3>Capitulo <br><?=$value[1]?></h3>
-                                    <a href="form/capitulo.php?id=<?=$value[1]?>" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
+                                    Ir <i class="fa fa-arrow-circle-right"></i>
                                     <a class="cta-btn"><?=$value[2]?></a>
                                 </div>
+								</a>
 						    </div>
                     </div>
                     <?}?>
