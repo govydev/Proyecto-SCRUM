@@ -2,7 +2,7 @@
 
 class formIndex{
 
-    public function formIndexShow($list){?>
+    public function formIndexShow($list, $tipo){?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -30,9 +30,15 @@ class formIndex{
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
-
+		<style>
+                .pie {
+                    background-color: black;
+                    color: white;
+                    text-align: center;
+                }
+        </style>
     </head>
-	<body>
+	<body >
 		<!-- HEADER -->
 		<header>
 			<!-- MAIN HEADER -->
@@ -48,7 +54,7 @@ class formIndex{
 								<a href="#" class="logo">
 							
 									<img src="./img/logo.png" alt="">
-								</a>
+								</a>	
 							</div>
 							
 						</div>
@@ -81,29 +87,64 @@ class formIndex{
 				</div>
 			</div>
 		<div class="section">
+			<div>
 			<!-- container -->
 			<div class="container">
                 <!-- row -->
-				<div class="row">
+				<div class="row"><?$i=1;?>
 					<!-- shop --> <?foreach ($list as $value) {?>
-					<div class="col-md-4 col-xs-6">
-                            <div class="shop">
-                                <a href="form/capitulo.php?capitulo=<?=$value[1]?>" class="cta-btn">
-								<div class="shop-img">
-                                    <img src="./img/portada<?=$value[1]?>.png" alt="<?=$value[2]?>">
-                                </div>
-                                <div class="shop-body">
-                                    <h3>Capitulo <br><?=$value[1]?></h3>
-                                    Ir <i class="fa fa-arrow-circle-right"></i>
-                                    <a class="cta-btn"><?=$value[2]?></a>
-                                </div>
-								</a>
-						    </div>
-                    </div>
-                    <?}?>
-                    </div>
-
-                </body>
+					<div class="col-md-6 col-xs-6">
+                        <div class="shop">
+                            <a href="form/<?=$tipo?>.php?<?=$tipo?>=<?=$value[1]?>" class="cta-btn">
+							<div class="shop-img">
+                                <img src="./img/portada<?=$i++?>.png" alt="<?=$value[2]?>">
+                            </div>
+                            <div class="shop-body">
+                                <h3><?=$tipo?> <br><?=$value[1]?></h3>
+                                Ir <i class="fa fa-arrow-circle-right"></i>
+                                <a class="cta-btn"><?=$value[2]?></a>
+                            </div>
+							</a>
+						</div>
+						<div style="text-align: center">
+                            <a class="cta-btn"><label for=""><?=$value[2]?></label></a>
+                        </div>
+						<?if($i>7) $i=1;?>
+					</div><?}?>
+                </div>
+				</div>
+				</body>
+				<hr>
+				<div class="pie">
+				<br><br>
+					<div class="row">
+						<div class="col-md-6 col-xs-6">
+							<label for="">Si desea que mejore este sitio, puede enviarnos una sugerencia </label>
+							<center><a href="form/sugerencia.php" class="btn btn-success">Sugerencias</a></center>
+						</div>
+						<div class="col-md-6 col-xs-6">
+							<h3 style="color: white">Creadores</h3>	
+							<div>
+								<ul>
+									<li><label>Avalos Pucyura, Milton Manuel</label></li>
+									<li><label>Gutierrez Huamanttupa, Marcos Antonio	</label></li>
+									<li><label>Ricce Capristan, Luis Alberto</label></li>
+									<li><label>Romero Dávalos, Joshep Angelo</label></li>
+									<li><label>Salirrosas Llamocuro, Flavio Cesar</label></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<footer class="full-width footer">
+						<div class="container">
+							<div class="col-xs-12">
+								<ul class="list-unstyled text-center full-width footer-copyright">
+								<li>&#174; 2020 Semillitas del saber</li><br>	
+								</ul>
+							</div>
+						</div>
+					</footer>
+				</div>
             </html>
     <?}
 

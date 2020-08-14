@@ -1,8 +1,8 @@
 <?php
 
-class formArticulo{
+class formDetalle{
 
-    public function formArticuloShow($list){?>
+    public function formDetalleShow($list){?>
         <!DOCTYPE html>
         <html lang="en">
             <head>
@@ -87,7 +87,7 @@ class formArticulo{
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="newsletter">
-                                    <p class="text-muted" style="color: white">Capitulo <strong><?=$list[0][4]?></strong></p>
+                                    <p class="text-muted" style="color: white">Disposicion <strong><?=$list[0][0]?></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -105,18 +105,18 @@ class formArticulo{
                             <div class="col-md-6 col-xs-6">
                                 <div class="shop">
                                     <div class="shop-img">
-                                        <img src="../img/portada<?=$list[0][4]?>.png">
+                                        <img src="../img/portada7.png">
                                     </div>
                                     <div class="shop-body">
-                                        <h3>Articulo <?=$list[0][1]?></h3>
+                                        <h3>Disposicion <?=$list[0][0]?></h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xs-6">
                                 <div class="shop-body">
                                     <br>
-                                    <h3><?=$list[0][2]?></h3>
-                                    <label><?=$list[0][3]?></label>
+                                    <h3><?=$list[0][1]?></h3>
+                                    <label><?=$list[0][2]?></label>
                                 </div>
                             </div>
                         </div>

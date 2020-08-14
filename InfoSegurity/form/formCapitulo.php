@@ -30,7 +30,13 @@ class formCapitulo{
         
                 <!-- Custom stlylesheet -->
                 <link type="text/css" rel="stylesheet" href="../css/style.css"/>
-        
+                <style>
+                .pie {
+                    background-color: black;
+                    color: white;
+                    text-align: center;
+                }
+                </style>
             </head>
             <body>
                 <!-- HEADER -->
@@ -46,7 +52,7 @@ class formCapitulo{
                             <div class="row">
                                 <!-- LOGO -->
                                 <div class="col-md-3">
-                                    <div class="header-logo">
+                                    <div class="logo">
                                         <a href="../index.php" class="logo">
                                             <img src="../img/logo.png" alt="">
                                         </a>
@@ -75,7 +81,7 @@ class formCapitulo{
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="newsletter">
-                                    <p class="text-muted">Capitulo <strong>1</strong></p>
+                                    <p class="text-muted" style="color: white">Capitulo <strong><?=$cap?>   </strong></p>
                                 </div>
                             </div>
                         </div>
@@ -86,29 +92,83 @@ class formCapitulo{
                 </header>
                 <!-- SECTION -->
                 <div class="section">
+                    <div>
                     <!-- container -->
                     <div class="container">
                         <!-- row -->
                         <div class="row">
                             <?foreach ($list as $value) {?>
-                                <div class="col-md-4 col-xs-6">
+                                <div class="col-md-6 col-xs-6">
                                     <div class="shop">
+                                        <a href="articulo.php?articulo=<?=$value[0]?>" class="cta-btn">
                                         <div class="shop-img">
                                             <img src="../img/portada<?=$value[4]?>.png">
                                         </div>
                                         <div class="shop-body">
-                                            <h3>Capitulo <br><?=$value[4]?></h3>
-                                            <a href="articulo.php?articulo=<?=$value[0]?>" class="cta-btn">Ir <i class="fa fa-arrow-circle-right"></i></a>
-                                            <a class="cta-btn"><?=$value[2]?></a>
+                                            <h3>Articulo  <br><?=$value[1]?></h3>
+                                            Ir <i class="fa fa-arrow-circle-right"></i>
                                         </div>
+                                        </a>
+                                    </div>
+                                    <div style="text-align: center">
+                                        <a class="cta-btn"><label for=""><?=$value[2]?></label></a>
                                     </div>
                                 </div>
+                            <?}?>
+                            <?if($cap == 7){?>
+                            <div class="col-md-6 col-xs-6">
+                                <div class="shop">
+                                    <a href="disposicion.php" class="cta-btn">
+                                    <div class="shop-img">
+                                        <img src="../img/portada7.png" alt="">
+                                    </div>
+                                    <div class="shop-body">
+                                        <h3>Disposiciones</h3>
+                                        Ir <i class="fa fa-arrow-circle-right"></i>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div style="text-align: center">
+                                    <a class="cta-btn"><label for="">Disposiciones</label></a>
+                                </div>
+                            </div>
                             <?}?>
                         </div>
                     </div>
                 </div>
-        
+                </div>
             </body>
+            <hr>
+            <div class="pie">
+            <br><br>
+				<div class="row">
+					<div class="col-md-6 col-xs-6">
+                        <label for="">Si desea que mejore este sitio, puede enviarnos una sugerencia </label>
+						<center><a href="sugerencia.php" class="btn btn-success">Sugerencias</a></center>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<h3 style="color: white">Creadores</h3>
+						<div>
+							<ul>
+								<li><label>Avalos Pucyura, Milton Manuel</label></li>
+								<li><label>Gutierrez Huamanttupa, Marcos Antonio	</label></li>
+								<li><label>Ricce Capristan, Luis Alberto</label></li>
+								<li><label>Romero Dávalos, Joshep Angelo</label></li>
+								<li><label>Salirrosas Llamocuro, Flavio Cesar</label></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<footer class="full-width footer">
+					<div class="container">
+						<div class="col-xs-12">
+							<ul class="list-unstyled text-center full-width footer-copyright">
+							<li>&#174; 2020 Semillitas del saber</li>
+							</ul>
+						</div>
+					</div>
+				</footer>
+            </div>
         </html>
         
     <?}

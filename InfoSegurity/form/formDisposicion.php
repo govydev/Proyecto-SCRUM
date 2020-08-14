@@ -1,9 +1,9 @@
-<?php
+<?
 
-class formArticulo{
+class formDisposicion{
 
-    public function formArticuloShow($list){?>
-        <!DOCTYPE html>
+    public function formDisposicionShow($list){?>
+<!DOCTYPE html>
         <html lang="en">
             <head>
                 <meta charset="utf-8">
@@ -32,10 +32,6 @@ class formArticulo{
                 <link type="text/css" rel="stylesheet" href="../css/style.css"/>
                 <style>
                 .pie {
-                    position: fixed;
-                    left: 0;
-                    bottom: 0;
-                    width: 100%;
                     background-color: black;
                     color: white;
                     text-align: center;
@@ -56,7 +52,7 @@ class formArticulo{
                             <div class="row">
                                 <!-- LOGO -->
                                 <div class="col-md-3">
-                                    <div class="header-logo">
+                                    <div class="logo">
                                         <a href="../index.php" class="logo">
                                             <img src="../img/logo.png" alt="">
                                         </a>
@@ -68,14 +64,12 @@ class formArticulo{
                                 <!-- SEARCH BAR -->
                                 <div class="col-md-6">
                                     <div class="header-search">
-                                        <form action="../index.php" method="POST">
-                                            <select class="input-select" name="txtOpcion">
-                                                <option value="capitulo">Capitulo</option>
-                                                <option value="contenido">Contenido</option>
-                                                <option value="articulo">Articulo</option>
+                                        <form action="disposicion.php" method="POST">
+                                            <select class="input-select">
+                                                <option value="0">Buscar</option>
                                             </select>
-                                            <input class="input" placeholder="Busqueda" name="txtBusqueda">
-                                            <button class="search-btn" type="submit">Buscar</button>
+                                            <input class="input" placeholder="Buscar" name="txtBusqueda">
+                                            <button class="search-btn">Buscar</button>
                                         </form>
                                     </div>
                                 </div>
@@ -87,7 +81,7 @@ class formArticulo{
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="newsletter">
-                                    <p class="text-muted" style="color: white">Capitulo <strong><?=$list[0][4]?></strong></p>
+                                    <p class="text-muted" style="color: white"><strong>Disposiciones</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -98,36 +92,40 @@ class formArticulo{
                 </header>
                 <!-- SECTION -->
                 <div class="section">
+                    <div>
                     <!-- container -->
                     <div class="container">
                         <!-- row -->
                         <div class="row">
-                            <div class="col-md-6 col-xs-6">
-                                <div class="shop">
-                                    <div class="shop-img">
-                                        <img src="../img/portada<?=$list[0][4]?>.png">
+                            <?foreach ($list as $value) {?>
+                                <div class="col-md-6 col-xs-6">
+                                    <div class="shop">
+                                        <a href="detalle.php?disposicion=<?=$value[0]?>" class="cta-btn">
+                                        <div class="shop-img">
+                                            <img src="../img/portada7.png">
+                                        </div>
+                                        <div class="shop-body">
+                                            <h3>Disposicion  <br><?=$value[0]?></h3>
+                                            Ir <i class="fa fa-arrow-circle-right"></i>
+                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="shop-body">
-                                        <h3>Articulo <?=$list[0][1]?></h3>
+                                    <div style="text-align: center">
+                                        <a class="cta-btn"><label for=""><?=$value[1]?><br><br></label></a>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-6">
-                                <div class="shop-body">
-                                    <br>
-                                    <h3><?=$list[0][2]?></h3>
-                                    <label><?=$list[0][3]?></label>
-                                </div>
-                            </div>
+                                </div>  
+                            <?}?>
                         </div>
                     </div>
                 </div>
+                </div>
             </body>
+            <hr>
             <div class="pie">
             <br><br>
 				<div class="row">
 					<div class="col-md-6 col-xs-6">
-						<label for="">Si desea que mejore este sitio, puede enviarnos una sugerencia </label>
+                        <label for="">Si desea que mejore este sitio, puede enviarnos una sugerencia </label>
 						<center><a href="sugerencia.php" class="btn btn-success">Sugerencias</a></center>
 					</div>
 					<div class="col-md-6 col-xs-6">
@@ -154,9 +152,7 @@ class formArticulo{
 				</footer>
             </div>
         </html>
-        
     <?}
 
 }
-
 ?>

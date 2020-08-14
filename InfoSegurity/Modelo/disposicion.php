@@ -1,16 +1,24 @@
 <?php
 include_once("conexion.php");
 
-class disposiciom{
+class disposicion{
 
     public function listaDispocicion(){
-        conexion::getConexion();
 		$consulta = "SELECT * FROM disposicion";
-		$resultado = mysql_query($consulta);
-		$num_registros = mysql_num_rows($resultado);
-		for($i = 0; $i < $num_registros; $i++)
-			$fila[$i] = mysql_fetch_array($resultado);
-		return $fila;
+		$resultado = conexion::getConexion() -> query($consulta);
+		return $resultado->fetch_all();
+	}
+	
+	public function listaDispocicionId($id){
+		$consulta = "SELECT * FROM disposicion WHERE iddisposicion = $id";
+		$resultado = conexion::getConexion() -> query($consulta);
+		return $resultado->fetch_all();
+	}
+	
+	public function listaDispocicionBusqueda($busqueda){
+		$consulta = "SELECT * FROM disposicion WHERE descripcion like '%$busqueda%'";
+		$resultado = conexion::getConexion() -> query($consulta);
+		return $resultado->fetch_all();
     }
 
 }
